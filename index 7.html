@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>PYO U9 Vikings | Sponsor a Player</title>
+<meta name="description" content="Support PYO U9 Vikings by sponsoring a player or becoming a team sponsor.">
+<style>
+  :root{
+    --red:#c8102e;
+    --red-dark:#970b22;
+    --black:#111111;
+    --ink:#171717;
+    --white:#ffffff;
+    --gray:#f4f4f4;
+    --gray2:#e7e7e7;
+    --muted:#666;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;
+    font-family:Arial,Helvetica,sans-serif;
+    color:var(--ink);
+    background:#fff;
+    line-height:1.55;
+  }
+  a{text-decoration:none;color:inherit}
+  .container{width:min(1180px,92%);margin:auto}
+
+  header{
+    position:sticky;top:0;z-index:20;
+    background:#fff;border-bottom:3px solid var(--red);
+    box-shadow:0 2px 12px rgba(0,0,0,.08)
+  }
+  .nav{
+    min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:30px
+  }
+  .brand{display:flex;align-items:center;gap:14px}
+  .ball{
+    width:54px;height:54px;border-radius:50%;
+    background:var(--black);display:grid;place-items:center;
+    color:#fff;font-size:27px;border:4px solid var(--red)
+  }
+  .brand strong{display:block;font-size:25px;letter-spacing:1px}
+  .brand span{font-size:13px;letter-spacing:5px;font-weight:bold;color:var(--red)}
+  nav{display:flex;gap:28px;font-weight:700;font-size:15px}
+  nav a:hover{color:var(--red)}
+  .nav-cta{background:var(--red);color:#fff;padding:11px 18px;border-radius:5px}
+  .nav-cta:hover{background:var(--red-dark);color:#fff}
+
+  .hero{
+    min-height:560px;display:flex;align-items:center;
+    background:
+      linear-gradient(90deg,rgba(0,0,0,.88),rgba(0,0,0,.55),rgba(0,0,0,.30)),
+      radial-gradient(circle at 75% 55%, #555 0 8%, transparent 9%),
+      linear-gradient(135deg,#252525,#111);
+    color:#fff;position:relative;overflow:hidden
+  }
+  .hero:after{
+    content:"⚽";position:absolute;right:6%;bottom:-55px;
+    font-size:360px;opacity:.12;transform:rotate(-12deg)
+  }
+  .hero-content{position:relative;z-index:2;padding:75px 0;max-width:700px}
+  .eyebrow{
+    text-transform:uppercase;letter-spacing:4px;color:#fff;font-weight:800;font-size:15px;
+    margin-bottom:14px
+  }
+  h1{font-size:clamp(48px,7vw,86px);line-height:.95;margin:0 0 20px;font-weight:900;text-transform:uppercase}
+  h1 .red{color:var(--red)}
+  .hero p{font-size:20px;max-width:640px;color:#f2f2f2}
+  .hero-buttons{display:flex;gap:14px;flex-wrap:wrap;margin-top:30px}
+  .btn{
+    display:inline-block;padding:15px 25px;border-radius:5px;font-weight:900;
+    text-transform:uppercase;letter-spacing:1px;border:2px solid transparent
+  }
+  .btn-red{background:var(--red);color:#fff}
+  .btn-red:hover{background:var(--red-dark)}
+  .btn-outline{border-color:#fff;color:#fff}
+  .btn-outline:hover{background:#fff;color:#111}
+
+  section{padding:70px 0}
+  .section-title{text-align:center;margin-bottom:40px}
+  .section-title h2{font-size:clamp(30px,4vw,46px);margin:0;text-transform:uppercase;letter-spacing:1px}
+  .section-title p{color:var(--muted);max-width:680px;margin:10px auto 0}
+
+  .use-grid{
+    display:grid;grid-template-columns:repeat(5,1fr);gap:0;border-top:1px solid var(--gray2);
+    border-bottom:1px solid var(--gray2)
+  }
+  .use-item{text-align:center;padding:25px 15px;border-right:1px solid var(--gray2)}
+  .use-item:last-child{border-right:0}
+  .icon{font-size:43px;margin-bottom:10px;display:block}
+  .use-item h3{font-size:15px;text-transform:uppercase;margin:0}
+
+  #sponsorship{background:var(--gray)}
+  .sponsor-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:18px}
+  .card{
+    background:#fff;border:1px solid #ddd;border-top:6px solid var(--red);
+    border-radius:8px;padding:28px 24px;box-shadow:0 5px 18px rgba(0,0,0,.05);
+    display:flex;flex-direction:column
+  }
+  .card.featured{border-top-color:var(--black)}
+  .card h3{text-transform:uppercase;font-size:19px;margin:12px 0 5px}
+  .price{font-size:42px;font-weight:900;color:var(--red);margin:0 0 18px}
+  .card ul{padding:0;margin:0 0 24px;list-style:none;flex:1}
+  .card li{margin:11px 0;padding-left:23px;position:relative}
+  .card li:before{content:"✓";position:absolute;left:0;color:var(--red);font-weight:900}
+  .card .btn{width:100%;text-align:center}
+
+  .impact{background:var(--black);color:#fff}
+  .impact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  .impact h2{font-size:42px;text-transform:uppercase;margin:0 0 15px}
+  .impact p{color:#ddd;font-size:18px}
+  .stats{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  .stat{border:1px solid #444;padding:25px;border-radius:8px}
+  .stat strong{display:block;font-size:34px;color:#fff}
+  .stat span{color:#bbb}
+  .progress-wrap{margin-top:25px}
+  .progress-top{display:flex;justify-content:space-between;font-weight:bold;margin-bottom:8px}
+  .percent-display{display:flex;align-items:baseline;gap:10px;margin:0 0 14px}
+  .percent-display strong{font-size:46px;color:#fff;line-height:1}
+  .percent-display span{color:#bbb;font-size:16px}
+  .progress{height:18px;background:#444;border-radius:99px;overflow:hidden}
+  .bar{height:100%;width:0;background:var(--red);transition:width .5s}
+
+  .payment{
+    background:linear-gradient(135deg,#fff,#f6f6f6);
+  }
+  .payment-box{
+    max-width:900px;margin:auto;text-align:center;border:3px solid var(--black);
+    border-radius:12px;padding:42px 30px;background:#fff
+  }
+  .payment-box h2{font-size:38px;text-transform:uppercase;margin:0 0 10px}
+  .payment-options{display:grid;grid-template-columns:repeat(3,1fr);gap:15px;margin-top:28px}
+  .pay{
+    border:1px solid #ddd;border-radius:8px;padding:20px;background:#fafafa
+  }
+  .pay strong{display:block;font-size:19px;margin-bottom:5px}
+  .pay small{color:#777}
+  .placeholder{color:var(--red);font-weight:bold}
+
+  .contact{background:var(--red);color:#fff}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:50px;align-items:center}
+  .contact h2{font-size:44px;text-transform:uppercase;margin:0}
+  .contact p{font-size:18px}
+  .contact-card{background:#fff;color:#111;padding:30px;border-radius:10px}
+  .contact-card div{margin:12px 0}
+
+  footer{background:#0b0b0b;color:#fff;padding:30px 0}
+  .footer{display:flex;justify-content:space-between;align-items:center;gap:20px}
+  .footer small{color:#aaa}
+  .social{display:flex;gap:10px}
+  .social a{border:1px solid #444;padding:8px 12px;border-radius:5px}
+
+  .update-box{margin-top:26px;padding:18px;border:1px solid #444;border-radius:8px;background:#171717}
+  .update-box summary{cursor:pointer;font-weight:800;color:#fff}
+  .update-controls{display:flex;gap:10px;align-items:center;flex-wrap:wrap;margin-top:14px}
+  .update-controls label{color:#bbb;font-size:14px}
+  .update-controls input{width:150px;padding:10px 12px;border-radius:5px;border:1px solid #666;background:#fff;color:#111;font-size:16px}
+  .update-controls button{padding:10px 16px;border:0;border-radius:5px;background:var(--red);color:#fff;font-weight:800;cursor:pointer}
+  .update-controls button:hover{background:var(--red-dark)}
+  .update-note{font-size:12px;color:#999;margin:10px 0 0}
+
+  @media(max-width:900px){
+    nav{display:none}
+    .sponsor-grid{grid-template-columns:repeat(2,1fr)}
+    .use-grid{grid-template-columns:repeat(3,1fr)}
+    .use-item:nth-child(3){border-right:0}
+    .impact-grid,.contact-grid{grid-template-columns:1fr}
+  }
+  @media(max-width:600px){
+    .nav{min-height:70px}
+    .brand strong{font-size:19px}
+    .brand span{font-size:10px;letter-spacing:3px}
+    .ball{width:45px;height:45px;font-size:22px}
+    .nav-cta{padding:9px 12px;font-size:12px}
+    .hero{min-height:610px}
+    .hero-content{padding:55px 0}
+    .hero p{font-size:17px}
+    section{padding:52px 0}
+    .use-grid,.sponsor-grid,.payment-options,.stats{grid-template-columns:1fr}
+    .use-item{border-right:0;border-bottom:1px solid var(--gray2)}
+    .use-item:last-child{border-bottom:0}
+    .contact h2{font-size:34px}
+    .footer{flex-direction:column;text-align:center}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <div class="container nav">
+    <a class="brand" href="#home">
+      <div class="ball">⚽</div>
+      <div><strong>PYO U9 VIKINGS</strong><span>U9 VIKINGS • PHILADELPHIA</span></div>
+    </a>
+    <nav>
+      <a href="#home">Home</a>
+      <a href="#about">Our Goals</a>
+      <a href="#sponsorship">Sponsorship</a>
+      <a href="#payment">Sponsor Now</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <a class="nav-cta" href="#payment">Sponsor Now</a>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="home">
+  <div class="container hero-content">
+    <div class="eyebrow">PYO U9 Vikings • Philadelphia</div>
+    <h1>Help Put a Jersey on <span class="red">a Player!</span></h1>
+    <p>Support our young athletes and help make the season possible. Your sponsorship helps provide opportunities for players to learn, compete, grow, and enjoy the game.</p>
+    <div class="hero-buttons">
+      <a class="btn btn-red" href="#sponsorship">View Sponsorship Levels</a>
+      <a class="btn btn-outline" href="#payment">Sponsor Now</a>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="container">
+    <div class="section-title">
+      <h2>Where Your Support Goes</h2>
+      <p>Every contribution helps support the players and the experiences that make youth soccer special.</p>
+    </div>
+    <div class="use-grid">
+      <div class="use-item"><span class="icon">🏆</span><h3>Tournament<br>Fees</h3></div>
+      <div class="use-item"><span class="icon">👕</span><h3>Team<br>Warm-Ups</h3></div>
+      <div class="use-item"><span class="icon">⚽</span><h3>Clinics &<br>Training</h3></div>
+      <div class="use-item"><span class="icon">🥅</span><h3>Team<br>Equipment</h3></div>
+      <div class="use-item"><span class="icon">🎉</span><h3>End-of-Season<br>Celebration</h3></div>
+    </div>
+  </div>
+</section>
+
+<section id="sponsorship">
+  <div class="container">
+    <div class="section-title">
+      <h2>Sponsorship Levels</h2>
+      <p>Choose a level that works for your family or business. Every sponsor makes a difference.</p>
+    </div>
+    <div class="sponsor-grid">
+      <article class="card">
+        <span class="icon">👟</span>
+        <h3>Team Player Sponsor</h3><div class="price">$25</div>
+        <ul><li>Thank-you post on team social media</li><li>Recognition as a PYO U9 Vikings supporter</li></ul>
+        <a class="btn btn-red" href="https://www.paypal.com/ncp/payment/LHU699BRJFT3S" data-paypal="25">Sponsor $25</a>
+      </article>
+      <article class="card">
+        <span class="icon">⭐</span>
+        <h3>All-Star Sponsor</h3><div class="price">$50</div>
+        <ul><li>Thank-you post on team social media</li><li>Recognition as a PYO U9 Vikings supporter</li></ul>
+        <a class="btn btn-red" href="https://www.paypal.com/ncp/payment/Q2FXEEN7B7XTE" data-paypal="50">Sponsor $50</a>
+      </article>
+      <article class="card">
+        <span class="icon">⚽</span>
+        <h3>Rookie Sponsor</h3><div class="price">$100</div>
+        <ul><li>Thank-you post on team social media</li><li>Recognition as a PYO U9 Vikings supporter</li></ul>
+        <a class="btn btn-red" href="https://www.paypal.com/ncp/payment/GZHG5X5DRJ9SS" data-paypal="100">Sponsor $100</a>
+      </article>
+      <article class="card">
+        <span class="icon">🥅</span>
+        <h3>Goal Sponsor</h3><div class="price">$250</div>
+        <ul><li>Social media recognition</li><li>Listed on our team sponsor graphic</li><li>Digital thank-you message</li></ul>
+        <a class="btn btn-red" href="https://www.paypal.com/ncp/payment/A7X7DKG7TT3FN" data-paypal="250">Sponsor $250</a>
+      </article>
+      <article class="card featured">
+        <span class="icon">🏆</span>
+        <h3>Tournament Sponsor</h3><div class="price">$500</div>
+        <ul><li>Logo on team banner</li><li>Social media recognition</li><li>Listed on our sponsor graphic</li><li>Special sponsor thank-you</li></ul>
+        <a class="btn btn-red" href="https://www.paypal.com/ncp/payment/HZU9JHV443856" data-paypal="500">Sponsor $500</a>
+      </article>
+      <article class="card">
+        <span class="icon">★</span>
+        <h3>Championship Sponsor</h3><div class="price">$1,000</div>
+        <ul><li>Large logo on team banner</li><li>Multiple social media shout-outs</li><li>Special team thank-you</li><li>Recognition at end of season</li></ul>
+        <a class="btn btn-red" href="https://www.paypal.com/ncp/payment/WSA4KTM3YDKGE" data-paypal="1000">Sponsor $1,000</a>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="impact" id="goal">
+  <div class="container impact-grid">
+    <div>
+      <div class="eyebrow" style="color:#fff">Our Team Goal</div>
+      <h2>Every Sponsor Helps Us Move Forward.</h2>
+      <p>We are working toward a fundraising goal of <strong>$5,000</strong> to help support the PYO U9 Vikings season.</p>
+      <div class="progress-wrap">
+        <div class="progress-top"><span>Fundraising Progress</span><span id="percent">0%</span></div>
+        <div class="percent-display"><strong id="percentLarge">0%</strong><span>of our $5,000 goal raised</span></div>
+        <div class="progress"><div class="bar" id="bar"></div></div>
+        <div style="display:flex;justify-content:space-between;color:#bbb;margin-top:7px;font-size:14px">
+          <span id="raisedLabel">$0 raised</span><span>$5,000 goal</span>
+        </div>
+      </div>
+    <p style="font-size:14px;color:#bbb;margin-top:16px">Fundraising progress is updated as donations are received.</p>
+      <details class="update-box">
+        <summary>⚙️ Update Fundraising Total</summary>
+        <div class="update-controls">
+          <label for="raisedInput">Total raised:</label>
+          <input id="raisedInput" type="number" min="0" step="1" inputmode="decimal" placeholder="e.g. 725">
+          <button type="button" id="updateRaised">Update</button>
+        </div>
+        <p class="update-note">Enter the total amount collected so far. This saves on this device/browser and updates the progress percentage automatically.</p>
+      </details>
+    </div>
+    <div class="stats">
+      <div class="stat"><strong>$5,000</strong><span>Fundraising Goal</span></div>
+      <div class="stat"><strong id="raisedStat">$0</strong><span>Raised So Far</span></div>
+      <div class="stat"><strong>6</strong><span>Sponsorship Levels</span></div>
+      <div class="stat"><strong>100%</strong><span>Team Spirit</span></div>
+    </div>
+  </div>
+</section>
+
+<section class="payment" id="payment">
+  <div class="container">
+    <div class="payment-box">
+      <h2>Ready to Sponsor a Player?</h2>
+      <p>Choose a sponsorship level above, then use one of the payment options below. Payment details can be updated with the team's actual accounts.</p>
+      <div class="payment-options" style="grid-template-columns:repeat(3,1fr)">
+        <div class="pay"><strong>Team Player Sponsor</strong><small>$25 • Secure PayPal checkout</small><br><a class="btn btn-red" style="margin-top:12px" href="https://www.paypal.com/ncp/payment/LHU699BRJFT3S" target="_blank" rel="noopener">$25 Sponsor</a></div>
+        <div class="pay"><strong>All-Star Sponsor</strong><small>$50 • Secure PayPal checkout</small><br><a class="btn btn-red" style="margin-top:12px" href="https://www.paypal.com/ncp/payment/Q2FXEEN7B7XTE" target="_blank" rel="noopener">$50 Sponsor</a></div>
+        <div class="pay"><strong>Rookie Sponsor</strong><small>$100 • Secure PayPal checkout</small><br><a class="btn btn-red" style="margin-top:12px" href="https://www.paypal.com/ncp/payment/GZHG5X5DRJ9SS" target="_blank" rel="noopener">$100 Sponsor</a></div>
+        <div class="pay"><strong>MVP Sponsor</strong><small>$250 • Secure PayPal checkout</small><br><a class="btn btn-red" style="margin-top:12px" href="https://www.paypal.com/ncp/payment/A7X7DKG7TT3FN" target="_blank" rel="noopener">$250 Sponsor</a></div>
+        <div class="pay"><strong>Hall of Fame Sponsor</strong><small>$500 • Secure PayPal checkout</small><br><a class="btn btn-red" style="margin-top:12px" href="https://www.paypal.com/ncp/payment/HZU9JHV443856" target="_blank" rel="noopener">$500 Sponsor</a></div>
+        <div class="pay"><strong>Championship Sponsor</strong><small>$1,000 • Secure PayPal checkout</small><br><a class="btn btn-red" style="margin-top:12px" href="https://www.paypal.com/ncp/payment/WSA4KTM3YDKGE" target="_blank" rel="noopener">$1,000 Sponsor</a></div>
+      </div>
+      <p style="font-size:14px;color:#777;margin-top:20px">Payments are processed securely through PayPal. The team’s bank account is connected inside the PayPal account—not stored on this website.</p>
+      <p style="font-size:14px;color:#777;margin-top:20px">Once your PayPal Payment Links are added, these buttons will open PayPal’s secure checkout in a new tab.</p>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="container contact-grid">
+    <div>
+      <h2>Thank You for Supporting PYO U9 Vikings!</h2>
+      <p>Your support helps our players grow on and off the field. We appreciate every family, business, and community member who helps make the season possible.</p>
+    </div>
+    <div class="contact-card">
+      <h3>Questions or Sponsorships?</h3>
+      <div>📧 <a href="mailto:parkwoodyouthsoccer@gmail.com">parkwoodyouthsoccer@gmail.com</a></div>
+      <div>📱 <a href="tel:+12159901355">215-990-1355</a></div>
+      <div>📍 Philadelphia, Pennsylvania</div>
+      <div>📲 <a href="https://www.instagram.com/pyo_u9vikings/" target="_blank" rel="noopener">@pyo_u9vikings</a></div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer">
+    <div><strong>PYO U9 VIKINGS SOCCER</strong><br><small>Philadelphia, PA • Same team. Same goals.</small></div>
+    <div class="social"><a href="https://www.instagram.com/pyo_u9vikings/" target="_blank" rel="noopener">Instagram: @pyo_u9vikings</a></div>
+  </div>
+</footer>
+
+<script>
+  /* PAYPAL SETUP
+     Paste the six PayPal Payment Link URLs below. These links are created in the
+     PayPal Business dashboard and send sponsors to PayPal's secure checkout.
+  */
+  const paypalLinks = {
+    25: 'https://www.paypal.com/ncp/payment/LHU699BRJFT3S',
+    50: 'https://www.paypal.com/ncp/payment/Q2FXEEN7B7XTE',
+    100: 'https://www.paypal.com/ncp/payment/GZHG5X5DRJ9SS',
+    250: 'https://www.paypal.com/ncp/payment/A7X7DKG7TT3FN',
+    500: 'https://www.paypal.com/ncp/payment/HZU9JHV443856',
+    1000: 'https://www.paypal.com/ncp/payment/WSA4KTM3YDKGE'
+  };
+
+  document.querySelectorAll('[data-paypal]').forEach(button => {
+    const amount = button.dataset.paypal;
+    if (paypalLinks[amount] && !paypalLinks[amount].includes('PAYPAL_')) {
+      button.href = paypalLinks[amount];
+      button.target = '_blank';
+      button.rel = 'noopener noreferrer';
+    } else {
+      button.href = '#payment';
+      button.addEventListener('click', (e) => {
+        e.preventDefault();
+        alert('PayPal setup is not connected yet. Add the PayPal Payment Link for this sponsorship level.');
+      });
+    }
+  });
+
+  const goal = 5000;
+  const savedRaised = localStorage.getItem('pyoRaisedTotal');
+  const initialRaised = savedRaised !== null ? Number(savedRaised) : 0;
+
+  function updateFundraisingTotal(raised) {
+    raised = Math.max(0, Number(raised) || 0);
+    localStorage.setItem('pyoRaisedTotal', raised);
+    const percent = Math.min(100, Math.round((raised / goal) * 100));
+    document.getElementById('bar').style.width = percent + '%';
+    document.getElementById('percent').textContent = percent + '%';
+    document.getElementById('percentLarge').textContent = percent + '%';
+    document.getElementById('raisedLabel').textContent = '$' + raised.toLocaleString() + ' raised';
+    document.getElementById('raisedStat').textContent = '$' + raised.toLocaleString();
+    document.getElementById('raisedInput').value = raised;
+  }
+
+  updateFundraisingTotal(initialRaised);
+
+  document.getElementById('updateRaised').addEventListener('click', function() {
+    updateFundraisingTotal(document.getElementById('raisedInput').value);
+  });
+</script>
+</body>
+</html>
